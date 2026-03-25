@@ -9,7 +9,6 @@ This repository contains my journey of solving Java problems every day to improv
 * Strengthen DSA concepts in Java
 * Build consistency and discipline
   
-...
 
 Each folder contains:
 

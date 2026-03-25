@@ -1,0 +1,18 @@
+// print the nth fibo. no.
+import java.util.Scanner;
+
+public class FibonacciNth {
+    public static int value(int n) {
+        if(n==0 || n==1)
+        {
+            return n;
+        }
+        return value(n-1)+value(n-2);
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(value(n));
+    }
+}

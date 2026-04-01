@@ -1,4 +1,4 @@
-public class Inorder {
+public class PostOrder {
     static class Node{
         int data;
         Node left;
@@ -22,13 +22,13 @@ public class Inorder {
             newNode.right = buildTree(nodes);
             return newNode;
         }
-        public void inOrder(Node rt){
+        public void postOrder(Node rt){
             if(rt==null){
                 return;
             }
-            inOrder(rt.left);
+            postOrder(rt.left);
+            postOrder(rt.right);
             System.out.print(rt.data+"->");
-            inOrder(rt.right);
             return;
         }
     }
@@ -36,7 +36,7 @@ public class Inorder {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree obj = new BinaryTree();
         Node root = obj.buildTree(nodes);
-        obj.inOrder(root);
+        obj.postOrder(root);
         System.out.println("NULL");
     }
 }

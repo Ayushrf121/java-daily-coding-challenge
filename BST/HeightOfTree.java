@@ -1,4 +1,9 @@
-public class Inorder {
+import java.util.LinkedList;
+import java.util.Queue;
+
+import org.w3c.dom.Node;
+
+public class HeightOfTree {
     static class Node{
         int data;
         Node left;
@@ -16,27 +21,27 @@ public class Inorder {
             if(nodes[i]==-1){
                 return null;
             }
-            // preOrder build...
             Node newNode = new Node(nodes[i]);
             newNode.left = buildTree(nodes);
             newNode.right = buildTree(nodes);
             return newNode;
         }
-        public void inOrder(Node rt){
+        public int height(Node rt){
             if(rt==null){
-                return;
+                return 0;
             }
-            inOrder(rt.left);
-            System.out.print(rt.data+"->");
-            inOrder(rt.right);
-            return;
+            int ht=0;
+            int left = height(rt.left);
+            int right = height(rt.right);
+            ht=Math.max(left, right)+1;
+            return ht;
         }
+        
     }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree obj = new BinaryTree();
         Node root = obj.buildTree(nodes);
-        obj.inOrder(root);
-        System.out.println("NULL");
+        System.out.println("The height of the Tree : "+obj.height(root));
     }
 }

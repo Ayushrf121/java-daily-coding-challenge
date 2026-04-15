@@ -1,7 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
-import org.w3c.dom.Node;
 
 public class HeightOfTree {
     static class Node{

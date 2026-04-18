@@ -1,4 +1,3 @@
-
 public class BSTSearch {
     static class Node{
         int data;

@@ -53,19 +53,28 @@ public class RootToLeafPath {
         }
         return root;
     }
-
+    public static boolean isValidBST(Node root,Node min,Node max){
+        if(root==null){
+            return true;
+        }
+        if(min!=null&&root.data<=min.data){
+            return false;
+        }
+        if(max!=null&&root.data>=max.data){
+            return false;
+        }
+        return isValidBST(root.left, min, root)&& isValidBST(root.right, root, max);
+    }
     public static void main(String[] args) {
         Node root = null;
-        root = bst(root, 4);
-        root = bst(root, 3);
-        root = bst(root, 1);
-        root = bst(root, 6);
-        root = bst(root, 5);
-        root = bst(root, 8);
-        root = bst(root, 10);
-        root = bst(root, 11);
-        root = bst(root, 12);
-        root = bst(root, 14);
-        System.out.println(leafPath(root));
+        int values[] = {1,1,1};
+        for (int i = 0; i < values.length; i++) {
+            root = bst(root, values[i]);
+        }
+        if(isValidBST(root, null, null)){
+            System.out.println("Valid");
+        }else{
+            System.out.println("invalid");
+        }
     }
 }

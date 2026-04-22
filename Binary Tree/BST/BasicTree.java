@@ -27,6 +27,19 @@ public class BasicTree{
         }
         return root;
     }
+    public static Node createMirror(Node root){
+        if(root==null){
+            return root;
+        }
+        Node left = createMirror(root.left);
+        Node right = createMirror(root.right);
+        if(left==null&&right==null){
+            return root;
+        }
+        root.left = right;
+        root.right = left;
+        return root;
+    }
     public static void preOrder(Node root){
         if(root==null){
             return;
@@ -51,6 +64,7 @@ public class BasicTree{
         postOrder(root.right);
         System.out.print(root.data+" ");
     }
+
     public static void main(String[] args) {
         Node root = null;
         root=bst(root, 4);
@@ -68,5 +82,7 @@ public class BasicTree{
         System.out.println();
         postOrder(root);
         System.out.println();
+        root = createMirror(root);
+        inOrder(root);
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Operations {
     public static void main(String[] args) {
         ArrayList <Integer> list = new ArrayList<>();
@@ -9,6 +10,7 @@ public class Operations {
         list.add(4);
         list.add(5);
         System.out.println(list);
+        // Get the value
         // System.out.println(list[4]); Wrong
         System.out.println(list.get(2)); // Right
 

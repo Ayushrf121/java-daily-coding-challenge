@@ -2,26 +2,28 @@ import java.util.ArrayList;
 
 public class MultiDimension {
     public static void main(String[] args) {
-        ArrayList <ArrayList<Integer>> mainList = new ArrayList<>();
-        // creating the lists;
-        ArrayList<Integer> l1 = new ArrayList<>();
-        l1.add(45); l1.add(85);
-        mainList.add(l1); 
-        ArrayList<Integer> l2 = new ArrayList<>();
-        l2.add(55); l2.add(65);
-        mainList.add(l2);
-        ArrayList<Integer> l3 = new ArrayList<>();
-        l3.add(155); l3.add(615);
-        mainList.add(l3);
+        // 2D arraylist....//
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
+        ArrayList<Integer> li1 = new ArrayList<>();
+        ArrayList<Integer> li2 = new ArrayList<>();
+        li1.add(2);
+        li1.add(4);
+        li1.add(6);
+        li1.add(7);
+        
+        li2.add(20);
+        li2.add(40);
+        li2.add(60);
+        li2.add(70);
 
-        // Accessing the elements
-        for (int i = 0; i < mainList.size(); i++) {
-            ArrayList <Integer> var = mainList.get(i);
-            for (int j = 0; j < var.size(); j++) {
-                System.out.print(var.get(j)+" ");
-            }            
+        arr.add(li1);
+        arr.add(li2);
+
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.get(i).size(); j++) { // to get the size of inner list.
+                System.out.print(arr.get(i).get(j)+" ");
+            }
             System.out.println();
         }
-        System.out.println(mainList);
     }
 }

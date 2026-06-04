@@ -115,44 +115,44 @@ public class Basics {
     }
 
     public static void main(String[] args) {
-        Basics ll = new Basics();
-        int data;
-        Scanner sc = new Scanner(System.in);
-        int ch;
-        do {
-             System.out.print("Enter No: ");
-            ch = sc.nextInt();
-            switch (ch) {
-            case 1:
-                System.out.print("Enter data : ");
-                data = sc.nextInt();
-                ll.addFirst(data);
-                break;
-            case 2:
-                System.out.print("Enter data : ");
-                data = sc.nextInt();
-                ll.addLast(data);
-                break;
-            case 3:
-                System.out.print("Enter data : ");
-                data = sc.nextInt();
-                System.out.print("Enter index : ");
-                int idx = sc.nextInt();
-                ll.addMiddle(idx,data);
-                break;
-            case 4:
-        System.out.println(ll.size());
-                break;
-            case 5:
-                ll.removeFirst();
-                break;
-            case 6:
-                ll.printList();
-                break;
-            case 7:
-                ll.removeLast();
-        }
-        } while (ch<=7);
-      
+            Basics ll = new Basics();
+            int data;
+            Scanner sc = new Scanner(System.in);
+            int ch;
+            do {
+                System.out.print("Enter No: ");
+                ch = sc.nextInt();
+                switch (ch) {
+                case 1:
+                    System.out.print("Enter data : ");
+                    data = sc.nextInt();
+                    ll.addFirst(data);
+                    break;
+                case 2:
+                    System.out.print("Enter data : ");
+                    data = sc.nextInt();
+                    ll.addLast(data);
+                    break;
+                case 3:
+                    System.out.print("Enter data : ");
+                    data = sc.nextInt();
+                    System.out.print("Enter index : ");
+                    int idx = sc.nextInt();
+                    ll.addMiddle(idx,data);
+                    break;
+                case 4:
+            System.out.println(ll.size());
+                    break;
+                case 5:
+                    ll.removeFirst();
+                    break;
+                case 6:
+                    ll.printList();
+                    break;
+                case 7:
+                    ll.removeLast();
+            }
+            } while (ch<=7);
+        
     }
 }

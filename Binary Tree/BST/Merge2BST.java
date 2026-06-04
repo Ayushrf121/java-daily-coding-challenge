@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Merge2BST {
     
@@ -37,31 +39,15 @@ public class Merge2BST {
         // }else if(root2==null){
         //     return root1;
         // }
+        // ArrayList<Integer> li1 = new ArrayList<>();
+        // getInorder(root1,li1);
+        // ArrayList<Integer> li2 = new ArrayList<>();
+        // getInorder(root2,li2);
         ArrayList<Integer> li1 = new ArrayList<>();
         getInorder(root1,li1);
-        ArrayList<Integer> li2 = new ArrayList<>();
-        getInorder(root2,li2);
-        ArrayList<Integer> mergedList = new ArrayList<>();
-        int i=0,j=0;
-        while (i<li1.size()&&j<li2.size()){
-            if(li1.get(i)<li2.get(j)){
-                mergedList.add(li1.get(i));
-                i++;
-            }else{
-                mergedList.add(li2.get(j));
-                j++;
-            }
-        }
-        // leftover values of li1 and li2.
-        while (i<li1.size()) {
-            mergedList.add(li1.get(i));
-            i++;
-        }
-        while (j<li2.size()) {
-            mergedList.add(li2.get(j));
-            j++;
-        }
-        return getMergedBST(mergedList,0,mergedList.size()-1);
+        getInorder(root2,li1);
+        Collections.sort(li1);
+        return getMergedBST(li1,0,li1.size()-1);
         
     }
     public static void inOrder(Node root){

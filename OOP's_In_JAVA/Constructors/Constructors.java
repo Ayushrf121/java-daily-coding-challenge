@@ -1,46 +1,52 @@
-public class Constructors
-{
-    public static void main(String[] args) {
-        // if you do not have the constructor created in a class then it will get automatically invoked by the Java. in this we can also provide the values to the constructor that are even privately protected
-        School s2 = new School();
-        School s1 = new School("Ayush",4000);
-        System.out.println(s1.getStd() + " " + s1.getName());
-        System.out.println(s2.getStd() + " " + s2.getName());
+// Types of Constructors.
+class Type1{
+    Type1(){
+        System.out.println("I am a default constructor!");
     }
 }
-
-class School
-{
-    private int std;
-    String name;
-
-    // Default Constructor
-    School()
-    {
-        System.out.println("Constructor was called!");
+class Type2{
+    Type2(){
+        System.out.println("I am type2 DC");
     }
-    //  Parameterised Constructor
-    School(String name,int std)
-    {
-        System.out.println("S1 called it....");
-        this.name = name;
-        this.std = std;
+    Type2(int x){
+        System.out.println("Value of x : "+x);
     }
-
-    void setName(String name)
-    {
-        this.name = name;
+}
+class Type3{
+    int x;
+    float y;
+    Type3(int x, float y){
+        this.x = x;
+        this.y = y;
     }
-    void setStd(int std)
-    {
-        this.std = std;
+    // copy constructor.
+    Type3(Type3 obj){
+        this.x = obj.x;
+        this.y = obj.y;
     }
-    int getStd()
-    {
-        return this.std;
+    public void details(int x){
+        if(x==0){
+            System.out.println("Copy is calling");
+        }else{
+            System.out.println("original is calling");
+        }
+        System.out.println(this.x);
+        System.out.println(this.y);
     }
-    String getName()
-    {
-        return this.name;
+}
+public class Constructors {
+    public static void main(String []args){
+        // Called automatically when obj. created.
+        Type1 obj = new Type1();
+        // if it was empty it will call the DC cuz of its prop.
+        // but since the it was parameterized so it called next Const.
+        Type2 obj2 = new Type2(45);
+        Type3 data1 = new Type3(45, 89.9f);
+        Type3 data2 = new Type3(data1);
+        data2.details(0);
+        data1.x = 10;
+        data1.y = 20;
+        data1.details(1);
+        data2.details(0);
     }
 }

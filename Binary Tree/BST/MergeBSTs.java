@@ -25,7 +25,6 @@ public class MergeBSTs {
 
         if (node.left == null && node.right == null) {
             TreeNode mergeRoot = roots.get(node.val);
-
             if (mergeRoot != null && mergeRoot != node) {
                 node.left = mergeRoot.left;
                 node.right = mergeRoot.right;

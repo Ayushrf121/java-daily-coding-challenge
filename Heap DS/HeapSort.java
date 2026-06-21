@@ -14,7 +14,7 @@ public class HeapSort {
             max = right;
         }
         if(max!=i){
-            int temp = arr.get(i);
+            int t = arr.get(i);
             arr.set(i, arr.get(max));
             arr.set(max, temp);
             heapify(arr, n, max);
@@ -36,7 +36,7 @@ public class HeapSort {
             int temp = arr.get(i);
             arr.set(i, arr.get(0));
             arr.set(0, temp);
-            // call heapify till the heap size which is decreasing by one so ultimately we get sorted heap/
+            // call heapify till the heap size which is decreasing by one so ultimately we get sorted heap
             heapify(arr, i, 0);
         }
         return;

@@ -16,7 +16,7 @@ public class HeapSort {
         if(max!=i){
             int t = arr.get(i);
             arr.set(i, arr.get(max));
-            arr.set(max, temp);
+            arr.set(max, t);
             heapify(arr, n, max);
         }
         return;

@@ -1,0 +1,17 @@
+HashSet In Java:-
+
+
+TreeSet In Java:-
+A TreeSet in Java is a collection class that stores unique elements in a sorted order. It belongs to the java.util package, implements the NavigableSet interface, and relies on a Red-Black tree data structure internally.
+
+Key FeaturesAutomatic Sorting: 
+Elements are sorted in ascending, natural order by default. You can customize this using a Comparator.
+No Duplicates: It rejects duplicate values.
+No Null Elements: Adding a null value throws a NullPointerException because it compares elements to sort them. TreeSet must sort items by comparing them, but null has no value or methods to call. Therefore, comparing null to any object instantly triggers a NullPointerException.
+
+Core MethodsMethodDescription:-
+add(E e)Inserts the element if not present.
+first() / last()Returns the lowest / highest element.
+higher(E e) / lower(E e)Returns the next strictly greater / smaller element.
+ceiling(E e) / floor(E e)Returns the next greater-or-equal / smaller-or-equal element.
+pollFirst() / pollLast()Retrieves and removes the lowest / highest element.

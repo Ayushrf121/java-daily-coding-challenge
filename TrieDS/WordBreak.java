@@ -1,11 +1,3 @@
-// Prefix Problem
-// Find shortest unique prefix for every word in a given list.
-// Assume no word is prefix of another.
-
-// arr[ ] = {"zebra", "dog", "duck", "dove"}
-// ans = {"z", "dog", "du", "dov")
-
-// eVery word in a eiven list.
 
 
 public class WordBreak {

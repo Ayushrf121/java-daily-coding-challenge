@@ -1,6 +1,4 @@
 public class AjacencyMatrix {
-
-
     int ajacencyMatrix[][];
     AjacencyMatrix(int nodes){
         ajacencyMatrix = new int [nodes][nodes];
@@ -10,8 +8,8 @@ public class AjacencyMatrix {
         for (int []edge : edges) {
             int r = edge[0];
             int c = edge[1];
-            ajacencyMatrix[r][c] = 1;
-            ajacencyMatrix[c][r] = 1;
+            ajacencyMatrix[r][c] = edge[2];
+            ajacencyMatrix[c][r] = edge[2];
         }
     }
     // directed graph.
@@ -19,7 +17,7 @@ public class AjacencyMatrix {
         for (int []edge : edges) {
             int r = edge[0];
             int c = edge[1];
-            ajacencyMatrix[r][c] = 1;
+            ajacencyMatrix[r][c] = edge[2];
         }
     }
     public void printGraph(){
@@ -34,7 +32,7 @@ public class AjacencyMatrix {
         int nodes=4;
         AjacencyMatrix graph = new AjacencyMatrix(nodes);
         AjacencyMatrix graph2 = new AjacencyMatrix(nodes);
-        int edges[][] = {{0,2},{0,1},{1,3}};
+        int edges[][] = {{0,2,20},{0,1,10},{1,3,50}};
         graph.addinMatrixUndirected(edges);
         graph.printGraph();
         System.out.println();
